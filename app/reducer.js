@@ -14,6 +14,7 @@ const INITIAL_STATE = fromJS({
 export default (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case 'ADD_PRODUCT_TO_CART':
+      console.log(state.get('cart')._tail.array)
       return state.set('cart', state.get('cart').push(action.id))
     case 'REMOVE_PRODUCT_FROM_CART':
       const index = state.get('cart').indexOf(action.id)
